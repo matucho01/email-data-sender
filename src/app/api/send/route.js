@@ -12,7 +12,7 @@ export async function POST(request) {
 
         const data = await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
-            to: ['cristopher.perez01@epn.edu.ec'],
+            to: [process.env.EMAIL],
             subject: 'Envío de prueba',
             react: EmailTemplate({ empresa, programa, fechaEmision, fechaVencimiento, monto, clase }),
         })
