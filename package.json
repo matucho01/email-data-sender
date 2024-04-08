@@ -1,7 +1,7 @@
 {
-  "name": "email-sender",
+  "name": "email-data-sender",
   "version": "1.0.0",
-  "description": "Web App to send email data to Nix",
+  "description": "Web App to send email data using Resend API",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,8 @@
     "javascript",
     "tailwindcss",
     "react",
-    "email"
+    "email",
+    "resend"
   ],
   "author": "Mateo Pérez",
   "dependencies": {
