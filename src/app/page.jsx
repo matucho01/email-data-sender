@@ -114,6 +114,7 @@ const HomePage = () => {
           <button type="submit" className='bg-sky-500 px-10 py-2 rounded-full'>Enviar datos</button>
         </div>
       </form>
+      <h1>Hola NIX</h1>
     </div>
   );
 }
