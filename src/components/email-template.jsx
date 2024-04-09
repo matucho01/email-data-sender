@@ -8,7 +8,7 @@ export const EmailTemplate = ({
     clase,
 }) => (
     <div className="email-container">
-        <h1>Los datos ingresados son</h1>
+        <h2>Nuevo ingreso de vencimiento</h2>
         <p>Empresa: {empresa}</p>
         <p>Programa: {programa}</p>
         <p>Fecha de emisión: {fechaEmision}</p>
