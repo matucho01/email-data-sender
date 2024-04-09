@@ -1,7 +1,6 @@
 'use client' // This means that the file will be executed on the client side
 
 import React, { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
 
 const HomePage = () => {
   const [data, setData] = useState({
@@ -9,6 +8,7 @@ const HomePage = () => {
     programa: '',
     fechaEmision: '',
     fechaVencimiento: '',
+    fechaVencimientoClase: '',
     monto: '',
     clase: '',
   });
@@ -63,7 +63,7 @@ const HomePage = () => {
         />
         <br />
         <label htmlFor='fechaEmision' className='block text-white'>
-          Fecha de emisión
+          Fecha de emisión del programa
         </label>
         <input
           type='date'
@@ -74,7 +74,7 @@ const HomePage = () => {
           required
         />
         <label htmlFor='fechaVencimiento' className='block text-white'>
-          Fecha de vencimiento
+          Fecha de vencimiento del programa
         </label>
         <input
           type='date'
@@ -82,6 +82,17 @@ const HomePage = () => {
           className='block w-full px-3 py-2 rounded-lg bg-slate-700 text-white'
           value={data.fechaVencimiento}
           onChange={e => setData({ ...data, fechaVencimiento: e.target.value })}
+          required
+        />
+        <label htmlFor='fechaVencimientoClase' className='block text-white'>
+          Fecha de vencimiento de la clase
+        </label>
+        <input
+          type='date'
+          name='fechaVencimientoClase'
+          className='block w-full px-3 py-2 rounded-lg bg-slate-700 text-white'
+          value={data.fechaVencimientoClase}
+          onChange={e => setData({ ...data, fechaVencimientoClase: e.target.value })}
           required
         />
         <br />

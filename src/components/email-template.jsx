@@ -3,6 +3,7 @@ export const EmailTemplate = ({
     programa,
     fechaEmision,
     fechaVencimiento,
+    fechaVencimientoClase,
     monto,
     clase,
 }) => (
@@ -12,6 +13,7 @@ export const EmailTemplate = ({
         <p>Programa: {programa}</p>
         <p>Fecha de emisión: {fechaEmision}</p>
         <p>Fecha de vencimiento: {fechaVencimiento}</p>
+        <p>Fecha de vencimiento de la clase: {fechaVencimientoClase}</p>
         <p>Monto: {monto}</p>
         <p>Clase: {clase}</p>
 
