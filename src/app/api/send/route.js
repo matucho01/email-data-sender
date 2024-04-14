@@ -8,13 +8,13 @@ export async function POST(request) {
     try {
         const body = await request.json()
         console.log('This is the received data from the POST request: ', body)
-        const { empresa, programa, fechaEmision, fechaVencimiento, fechaVencimientoClase, monto, clase } = body
+        const { empresa, programa, fechaEmision, fechaVencimiento, fechaVencimientoClase, monto, clase, plazo } = body
 
         const data = await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
             to: [process.env.EMAIL],
             subject: 'Vencimientos: ' + empresa,
-            react: EmailTemplate({ empresa, programa, fechaEmision, fechaVencimiento, fechaVencimientoClase, monto, clase }),
+            react: EmailTemplate({ empresa, programa, fechaEmision, fechaVencimiento, fechaVencimientoClase, monto, clase, plazo }),
         })
         console.log(data)
 

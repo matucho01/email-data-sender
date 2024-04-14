@@ -6,6 +6,7 @@ export const EmailTemplate = ({
     fechaVencimientoClase,
     monto,
     clase,
+    plazo
 }) => (
     <div className="email-container">
         <h2>Nuevo ingreso de vencimiento</h2>
@@ -16,6 +17,7 @@ export const EmailTemplate = ({
         <p>Fecha de vencimiento de la clase: {fechaVencimientoClase}</p>
         <p>Monto: {monto}</p>
         <p>Clase: {clase}</p>
+        <p>Plazo: {plazo}</p>
 
         <hr />
 

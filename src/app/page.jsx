@@ -11,6 +11,7 @@ const HomePage = () => {
     fechaVencimientoClase: '',
     monto: '',
     clase: '',
+    plazo: '',
   })
 
   const sendEmail = async (e) => {
@@ -122,6 +123,18 @@ const HomePage = () => {
               value={data.clase}
               onChange={e => setData({ ...data, clase: e.target.value })}
               placeholder='Ej.: A, B, C'
+              required
+            />
+            <label htmlFor='plazo' className='block text-white'>
+              Plazo
+            </label>
+            <input
+              type='number'
+              name='plazo'
+              className='block w-full px-3 py-2 rounded-lg bg-slate-700 text-white'
+              value={data.plazo}
+              onChange={e => setData({ ...data, plazo: e.target.value })}
+              placeholder='Ej.: 30'
               required
             />
           </div>
