@@ -14,8 +14,13 @@ const HomePage = () => {
     plazo: '',
   })
 
+  const [loading, setLoading] = useState(false)
+  const [feedback, setFeedback] = useState('')
+
   const sendEmail = async (e) => {
     e.preventDefault();
+    setLoading(true)
+
     const response = await fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -25,11 +30,30 @@ const HomePage = () => {
     })
 
     if (response.status === 200) {
-      alert('¡Email enviado!')
-      setData({})
+      //alert('¡Email enviado!')
+      setFeedback('¡Email enviado!')
+      setData({
+        empresa: '',
+        programa: '',
+        fechaEmision: '',
+        fechaVencimiento: '',
+        fechaVencimientoClase: '',
+        monto: '',
+        clase: '',
+        plazo: '',
+      })
+      setTimeout(() => {
+        setFeedback('')
+        setLoading(false)
+      }, 3000)
       e.target.reset()
     } else {
-      alert('Error al enviar el email')
+      //alert('Error al enviar el email')
+      setFeedback('Error al enviar el email')
+      setTimeout(() => {
+        setFeedback('')
+        setLoading(false)
+      }, 3000)
     }
   }
 
@@ -141,8 +165,15 @@ const HomePage = () => {
         </div>
         <br />
         <div className='flex justify-center'>
-          <button type="submit" className='bg-sky-500 px-10 py-2 rounded-full'>Enviar datos</button>
+          {loading ? (
+            <p className='text-white'>Enviando correo...</p>
+          ) : (
+            <button type="submit" className='bg-sky-500 px-10 py-2 rounded-full'>
+              Enviar correo
+            </button>
+          )}
         </div>
+        {feedback && <p className='text-white text-center mt-4'>{feedback}</p>}
       </form>
     </div>
   )
